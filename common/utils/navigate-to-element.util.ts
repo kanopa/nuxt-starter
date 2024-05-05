@@ -5,9 +5,8 @@ export const navigateToElementUtil = (el: HTMLElement | Element) => {
   if ('scrollBehavior' in document.documentElement.style) {
     const marginTop = parseInt(el.parentElement ? getComputedStyle(el.parentElement).marginTop : '0')
     const documentStyles = getComputedStyle(document.documentElement)
-    const headerHeightRem = parseFloat(documentStyles.getPropertyValue('--hc-header-height'))
-    const headerMarginRem = parseFloat(documentStyles.getPropertyValue('--hc-header-top'))
-    const headerHeight = (headerHeightRem + headerMarginRem) * defaultRem
+    const headerHeightRem = parseFloat(documentStyles.getPropertyValue('--header-height'))
+    const headerHeight = headerHeightRem * defaultRem
 
     const top = calculatedTop - marginTop - headerHeight
     return window.scrollTo({ top, behavior: 'smooth' })
