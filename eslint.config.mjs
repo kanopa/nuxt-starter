@@ -34,6 +34,18 @@ export default createConfigForNuxt(
       'vue/require-default-prop': 'off',
       'vue/space-infix-ops': 'error',
       'vue/singleline-html-element-content-newline': 'off',
+      'vue/html-self-closing': [
+        'error',
+        {
+          html: {
+            void: 'always',
+            normal: 'always',
+            component: 'always',
+          },
+          svg: 'always',
+          math: 'always',
+        },
+      ],
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
